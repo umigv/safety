@@ -10,7 +10,21 @@ This repository currently contains code that we will eventually load onto an Ard
 
 # Comments
 In order to get permission to upload the Arduino, the following command may be used:
-$sudo chmod 777 /dev/ttyACM0
+
+```
+$ sudo chmod 777 /dev/ttyACM0
+```
+
 If this is successful, the command
-$platformio run --target upload
-Should compile and upload the code
+
+```
+$ platformio run --target upload
+```
+
+Should compile and upload the code. Platformio must be installed; it is relatively simple and laid out on their website.
+
+```
+$ python -c "$(curl -fsSL https://raw.githubusercontent.com/platformio/platformio/develop/scripts/get-platformio.py)"
+cd /path/to/dir/where/is/located/get-platformio.py/script
+python get-platformio.py
+```
