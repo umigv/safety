@@ -30,12 +30,22 @@ void setup()
   pinMode(wirelessPin, INPUT);
   pinMode(limiterPin, INPUT);
   pinMode(stopPin, OUTPUT);
+
+  pinMode(8, OUTPUT);
+  pinMode(9, OUTPUT);
+  pinMode(10, OUTPUT);
+  pinMode(11, OUTPUT);
+
+  digitalWrite(8, LOW);
+  digitalWrite(9, LOW);
+  digitalWrite(10, LOW);
+  digitalWrite(11, HIGH);
 }
 
 void loop()
 {
   wiredSig = digitalRead(wiredPin);
-  wirelessSig = digitalRead(wirelessPin);
+  wirelessSig = !digitalRead(wirelessPin);
   
   curr = digitalRead(limiterPin);
   if(last==LOW && curr==HIGH)
